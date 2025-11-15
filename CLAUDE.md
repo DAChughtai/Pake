@@ -132,6 +132,7 @@ Rust-based desktop framework that wraps webpages:
 - **app/setup.rs**: App initialization, single instance, global shortcuts, tray icon
 
 **Key Tauri Plugins** (see `Cargo.toml`):
+
 - `tauri-plugin-window-state`: Save/restore window position
 - `tauri-plugin-global-shortcut`: Custom keyboard shortcuts
 - `tauri-plugin-shell`: Secure shell command execution
@@ -161,6 +162,7 @@ JavaScript injected into packaged webpages for enhanced functionality:
 ### Configuration System
 
 **pake.json**: Runtime configuration loaded by Rust app
+
 - `windows[]`: Array of window configs (URL, size, behavior)
 - `user_agent`: Platform-specific user agent strings
 - `system_tray`: Tray icon enable/disable per platform
@@ -169,6 +171,7 @@ JavaScript injected into packaged webpages for enhanced functionality:
 - `multi_instance`: Allow multiple app instances
 
 **tauri.conf.json**: Build-time Tauri configuration
+
 - Application metadata (name, version, author)
 - Bundle settings (identifier, icon, resources)
 - Window defaults
@@ -240,16 +243,19 @@ pnpm run format
 ### Continuous Integration
 
 **quality-and-test.yml**: Runs on all PRs
+
 - Code formatting validation (Prettier for TS/JS, cargo fmt for Rust)
 - Full test suite execution on Ubuntu
 - Multi-platform compatibility checks
 
 **pake-cli.yaml**: Publishes CLI to npm
+
 - Triggered on version tags or manual dispatch
 - Builds CLI bundle with rollup
 - Publishes to npm registry
 
 **release.yml**: Coordinates releases
+
 - Builds apps for all platforms (macOS/Windows/Linux)
 - Creates GitHub releases with binaries
 - Publishes Docker images
@@ -395,9 +401,11 @@ When working on Pake, these are the most frequently modified files:
 ## Quick Reference
 
 ### File Reference Format
+
 When referencing code locations, use: `file_path:line_number` (e.g., `src-tauri/src/app/window.rs:42`)
 
 ### Common Commands Cheat Sheet
+
 ```bash
 pnpm run dev              # Development with hot reload
 pnpm run cli:build        # Build CLI
@@ -410,6 +418,7 @@ node dist/cli.js --help   # Test CLI locally
 ```
 
 ### Important Directories
+
 - `bin/` → TypeScript CLI tool
 - `src-tauri/src/` → Rust application code
 - `src-tauri/src/inject/` → JavaScript injections
